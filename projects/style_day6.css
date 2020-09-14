@@ -1,0 +1,203 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #FFFFFF;
+  /*rebeccapurple; */
+
+
+  /*   COOL COLORS
+  rebeccapurple, bisque,azure,antiquewhite,aliceblue;. chartreuse chocolate coral*/
+  --bar: #FF6E40;
+  --color: #448AFF;
+}
+
+body {
+  font-size: 15pt;
+  padding: auto 0;
+  background: var(--bg);
+}
+
+
+
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  width: 300px;
+  animation: 1.1s focus 3.8s ease;
+  transition: 0.1s all ease;
+}
+
+/*To blur on click */
+.container:active {
+  filter: blur(2px);
+}
+
+
+.logo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: blur(7px);
+  opacity: 0;
+  animation: 3s huerotate 0.4s forwards linear;
+}
+
+
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 8px solid var(--bar);
+}
+
+.bar {
+  position: absolute;
+  top: -8px;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  border-top: 8px solid var(--bar);
+}
+
+.blank {
+  position: absolute;
+  top: -8px;
+  left: -16px;
+  height: 22px;
+  width: 100px;
+  background: var(--bg);
+
+  z-index: -3;
+
+}
+
+#top {
+  height: 100px;
+  width: 100px;
+}
+
+#b1 {
+  width: 110px;
+  z-index: 69;
+}
+
+
+
+#middle {
+  height: 70px;
+  width: 70px;
+  z-index: 3;
+}
+
+#bl2 {
+  position: absolute;
+  top: -8px;
+  left: -48px;
+  z-index: -2;
+}
+
+
+#b2 {
+  width: 75px;
+  z-index: 6;
+}
+
+#last {
+  height: 40px;
+  width: 40px;
+  z-index: 4;
+}
+
+#cover {
+  background: var(--bg);
+  height: 70px;
+  width: 50px;
+  position: absolute;
+  top: 90px;
+  left: 116px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 4;
+}
+
+#name {
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  transform: rotate(0deg) translateX(-50%);
+  color: var(--color);
+  
+}
+
+#name ul {
+  display: flex;
+  list-style: none;
+}
+
+#name ul li {
+  filter: blur(2px);
+  opacity: 0;
+}
+
+#name ul li:nth-child(1) {
+  animation: 0.8s fadein 2.3s forwards ease alternate;
+}
+#name ul li:nth-child(2) {
+  animation: 0.8s fadein 2.4s forwards ease alternate;
+}
+#name ul li:nth-child(3) {
+  animation: 0.8s fadein 2.5s forwards ease alternate;
+}
+#name ul li:nth-child(4) {
+  animation: 0.8s fadein 2.6s forwards ease alternate;
+}
+#name ul li:nth-child(5) {
+  animation: 0.8s fadein 2.7s forwards ease alternate;
+}
+#name ul li:nth-child(6) {
+  animation: 0.8s fadein 2.8s forwards ease alternate;
+}
+
+
+@keyframes fadein {
+  to {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes focus {
+  50% {
+    filter: blur(2px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes huerotate {
+  0% {
+    filter: blur(9px) hue-rotate(10deg);
+  
+  }
+  
+  90% {
+    filter: blur(0.3px) hue-rotate(350deg);
+  }
+  100% {
+    filter: blur(0px) hue-rotate(360deg);
+        opacity: 1;
+  }
+}
+

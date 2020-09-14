@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  font-size: 15pt;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  /* background: #662BE1;*/
+  height: 60vh;
+  width: 100%;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-left: 2px solid grey;
+  border-top: 2px solid grey;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+#one {
+  width: 40px;
+  height: 40px;
+  animation: 1s front linear infinite;
+}
+
+#two {
+  width: 60px;
+  height: 60px;
+  /* border-bottom: 2px solid grey;*/
+  animation: 1.4s front linear infinite;
+}
+
+
+#three {
+  width: 80px;
+  height: 80px;
+  animation: 1s back linear infinite;
+}
+
+
+#four {
+  width: 100px;
+  height: 100px;
+  border-bottom: 2px solid grey;
+  animation: 2s front linear infinite;
+}
+
+#load {
+  font-family: 'Montserrat', sans-serif;
+  
+  vertical-align: center;
+  color: grey;
+  position: absolute;
+  top: 110px;
+  left: 7px;
+  opacity: 1;
+}
+
+#preloader-text {
+  width: 100px;
+  height: 100px;
+  border: 2px solid transparent;
+}
+
+@keyframes cfront {
+  from {
+    transform: translate(-50%, -50%) rotateZ(180deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotateZ(270deg);
+  }
+}
+
+@keyframes front {
+  from {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotateZ(-360deg);
+  }
+}
+
+
+@keyframes back {
+  from {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotateZ(-360deg);
+  }
+}
