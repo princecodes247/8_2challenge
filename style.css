@@ -7,15 +7,27 @@
   --p-font: Philosopher, san-serif;
   --b-color: blue;
   --b-size: 2px;
+  --bg: #101010;
 }
 body {
     font-size: 15pt;
     font-family: var(--p-font);
+    background: var(--bg);
 }
 
+header {
+  text-align: center;
+  height: 10vh;
+display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 30px;
+}
 main {
   background: #101010;
-  height: 100vh;
+  height: 90vh;
 display: flex;
 flex-flow: column wrap;
     justify-content: center;
