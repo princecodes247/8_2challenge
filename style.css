@@ -1,0 +1,113 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --p-font: Philosopher, san-serif;
+  --b-color: blue;
+  --b-size: 2px;
+}
+body {
+    font-size: 15pt;
+    font-family: var(--p-font);
+}
+
+main {
+  background: #101010;
+  height: 100vh;
+display: flex;
+flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+ul {
+  text-align: center;
+  height: 80%;
+display: flex;
+flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    
+}
+
+#list * {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.item {
+  position: relative;
+  padding: 10px 5px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.item span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to left, var(--b-color), transparent);
+  width: 100%;
+  height: var(--b-size);
+  animation: anim-borderX 2s infinite forwards;
+  transform: translateX(-100%);
+}
+
+.item span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to top, var(--b-color), transparent);
+  height: 100%;
+  width: var(--b-size);
+  animation: anim-borderY 2s infinite forwards;
+  animation-delay: 0.5s;
+  transform: translateY(-100%);
+}
+
+.item span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, var(--b-color), transparent);
+  width: 100%;
+  height: var(--b-size);
+  animation: anim-borderX2 2s 1s forwards infinite;
+  transform: translateX(100%);
+}
+
+.item span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+ background: linear-gradient(to bottom, var(--b-color), transparent);
+  height: 100%;
+  width: var(--b-size);
+  animation: anim-borderY2 2s 1.5s infinite forwards;
+  transform: translateY(100%);
+}
+
+@keyframes anim-borderX {
+  to {
+    transform: translateX(100%)
+  }
+}
+@keyframes anim-borderX2 {
+  to {
+    transform: translateX(-100%)
+  }
+}
+@keyframes anim-borderY {
+  to {
+    transform: translateY(100%)
+  }
+}
+@keyframes anim-borderY2 {
+  to {
+    transform: translateY(-100%)
+  }
+}
